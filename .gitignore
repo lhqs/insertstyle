@@ -1,0 +1,22 @@
+*.classpath
+*.project
+
+.project
+.target
+
+target/
+bin/
+.idea/
+*.iml
+.idea/**
+.idea
+logs/**
+
+
+# 以下是github上java.gitignore推荐的设置
+
+# Log file
+*.log
+
+
+

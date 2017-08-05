@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+
+			<div class="mui-content">
+				<div id="slider" class="mui-slider">
+
+				</div>
+			</div>
+
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="ant-one">
+					<a class="mui-navigate-right">
+						昆虫故事1 - 甲虫
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="ant-two">
+						昆虫故事2 - 蚂蚁
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="ant-three">
+						昆虫故事3 - 空
+					</a>
+				</li>
+			</ul>
+			<br />
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="posttest">
+				临时：请求方式为post，返回数据弹框提示
+			</button>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				var ant_one = document.getElementById("ant-one");
+				ant_one.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'pages/ant.html',
+						id: "ant.html"
+					})
+				});
+				var ant_one = document.getElementById("ant-three");
+				ant_one.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'pages/mayi.html',
+						id: "mayi.html"
+					})
+				});
+				var ant_one = document.getElementById("ant-two");
+				ant_one.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'pages/jiachong.html',
+						id: "jiachong.html"
+					})
+				});
+				
+
+			});
+		</script>
+
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				document.getElementById('posttest').addEventListener('tap', function() {
+					mui.ajax({
+						type: 'POST',
+						data: {
+							'name': '临时测试使用',
+							'age': 18
+						},
+						url: "http://lhqs1314.cn/demo/post-interface.php",
+						success: function(msg) {
+							console.log(msg);
+
+							mui.alert(msg);
+						},
+						error: function(xhr, type, errorThrown) {
+							mui.alert("error");
+						}
+					});
+				});
+			});
+		</script>
+
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			
+			//
+			var old_back = mui.back;  
+		      mui.back = function() {  
+		      var wobj = plus.webview.getWebviewById("homeindex");  
+		      //id为父页面id，可以换成任何准备刷新页面的id
+		      wobj.reload(true);  
+		       old_back();
+		     }
+			// 示例数据
+			var data = [{
+					//					'img': 'http://dcloud.io/hellomui/images/shuijiao.jpg',
+					'img': 'http://lhqs1314.cn/demo/1.jpg',
+					'href': 'http://lhqs1314.cn/atom/index.html'
+				},
+				{
+					//					'img': 'http://dcloud.io/hellomui/images/muwu.jpg',
+					'img': 'http://lhqs1314.cn/demo/2.jpg',
+					'href': 'http://lhqs1314.cn/atom/index.html'
+				},
+				{
+					//					'img': 'http://dcloud.io/hellomui/images/cbd.jpg',
+					'img': 'http://lhqs1314.cn/demo/1.jpg',
+					'href': 'http://lhqs1314.cn/atom/index.html'
+				}
+			]
+
+			var len = data.length;
+
+			// 图片
+			var sliderGroup = document.createElement("div");
+			sliderGroup.className = "mui-slider-group mui-slider-loop";
+			var group = '<div class="mui-slider-item mui-slider-item-duplicate">' +
+				'<a href="' + data[len - 1].href + '">' +
+				'<img src="' + data[len - 1].img + '">' +
+				'</a>' +
+				'</div>';
+			for(var i = 0; i < len; i++) {
+				group += '<div class="mui-slider-item">' +
+					'<a href="' + data[i].href + '">' +
+					'<img src="' + data[i].img + '">' +
+					'</a>' +
+					'</div>';
+			}
+			group += '<div class="mui-slider-item mui-slider-item-duplicate">' +
+				'<a href="' + data[0].href + '">' +
+				'<img src="' + data[0].img + '">' +
+				'</a>' +
+				'</div>';
+			sliderGroup.innerHTML = group;
+
+			// 圆点
+			var sliderIndicator = document.createElement("div");
+			sliderIndicator.className = "mui-slider-indicator";
+			for(var i = 0; i < len; i++) {
+				var item = document.createElement("div");
+				item.className = "mui-indicator";
+				if(i == 0) {
+					item.classList.add('mui-active');
+				}
+				sliderIndicator.appendChild(item);
+			}
+
+			var slider = document.getElementById('slider');
+			slider.appendChild(sliderGroup);
+			slider.appendChild(sliderIndicator);
+
+			mui("#slider").slider({
+				interval: 3000
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,99 @@
+{
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "home.html",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "home.html",
+      "setting.html",
+      "recognize.html",
+      "pages/index.html",
+      "location.html",
+      "pages/location.html"
+    ]
+  },
+  "pages/index.html": {
+    "resources": [
+      "js/lib/facepp/facepp-sdk.min.js",
+      "js/lib/encode/sha1-min.js",
+      "js/lib/jquery/jquery.form.js",
+      "js/lib/encode/hmac-min.js",
+      "js/app/index.js",
+      "js/lib/encode/enc-base64-min.js",
+      "js/lib/jquery/jquery-1.11.2.min.js",
+      "js/lib/encode/cipher-core-min.js",
+      "css/app/index.css",
+      "js/lib/qiao.js",
+      "js/lib/encode/core-min.js",
+      "js/lib/someapp/facepp-sdk.min.js"
+    ],
+    "refer": []
+  },
+  "home.html": {
+    "refer": [
+      "pages/ant.html",
+      "pages/mayi.html",
+      "pages/jiachong.html"
+    ],
+    "resources": [
+      "css/mui.min.css",
+      "pages/mayi.html",
+      "pages/jiachong.html"
+    ]
+  },
+  "pages/ant.html": {
+    "resources": [
+      "css/mui.min.css",
+      "img/insect.jpg",
+      "img/story/jia.jpg"
+    ],
+    "refer": []
+  },
+  "setting.html": {
+    "resources": [
+      "pages/login.html",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/sinaweibo.png",
+      "img/tencentweibo.png",
+      "img/qq.png",
+      "img/pengyouquan.png",
+      "img/weixin.png"
+    ],
+    "refer": [
+      "pages/login.html"
+    ]
+  },
+  "pages/login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "location.html": {
+    "resources": [
+      "img/site.png"
+    ],
+    "refer": []
+  },
+  "pages/mayi.html": {
+    "resources": [
+      "css/mui.min.css",
+      "img/story/12.jpg",
+      "img/story/11.jpg",
+      "img/story/13.jpg"
+    ],
+    "refer": []
+  },
+  "pages/jiachong.html": {
+    "resources": [
+      "img/insect.jpg",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  }
+}

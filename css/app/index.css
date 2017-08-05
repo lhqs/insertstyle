@@ -1,0 +1,23 @@
+.mui-content-padded{
+	margin-top: 50px;
+}
+.face-img{
+	display: block;
+	margin: 0 auto;
+	width: 300px;
+	height: 400px;
+}
+.face-btn{
+	display: block;
+	margin: 20px auto;
+	height: 60px;
+	width: 300px;
+	font-size: 20px;
+}
+#res{
+	margin: 10px auto;
+	width: 300px;
+}
+form{
+	display: none;
+}
